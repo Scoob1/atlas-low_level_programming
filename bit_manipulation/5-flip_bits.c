@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	for (con = 0; index >= 0; index--)
 	{
-		if (((num >> index) &1) == 1)
+		if (((num >> index) & 1) == 1)
 		{
 			con += 1;
 		}
