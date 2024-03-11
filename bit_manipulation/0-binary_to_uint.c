@@ -1,9 +1,10 @@
 #include "main.h"
 /**
  * binary_to_uint - function that converts binary to unsigned int
- * @b: takes in a conts char string
+ * @b: takes in a constant char string
  * Return: the converted unsigned int
  */
+
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int con = 0, dec = 0;
