@@ -6,6 +6,9 @@
 /**
  * dlistint_len - counts the number of elements in a doubly linked list
  * @h: Pointer to the head node of the list
+ *
+ * Return: the num of elements in the list
+ * if @h is NULL, return 0.
  */
 
 size_t dlistint_len(const dlistint_t *h)
