@@ -8,30 +8,31 @@
  * @size: number of elements in the array
  * @value: value to search for
  *
- * Return: index of the value if found, -1 otherwise
+ * Return: If the value is not present or the array is NULL, -1 is returned.
+ * otherwise, the index of the value is returned
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, left, right;
+	size_t left = 0, right = size - 1, mid, i;
 
 	if (array == NULL)
 		return (-1);
 
-	for (left = 0, right = size - 1; right >= left;)
+	while (left <= right)
 	{
 		printf("Searching in array: ");
-		for (i = left; i <= right; i++)
+		for (i = left; i < right; i++)
 			printf("%d, ", array[i]);
-		printf("\n");
-
-		i = left + (right - left) / 2;
-		if (array[i] == value)
-			return (i);
-		if (array[i] > value)
-			right = i - 1;
+		printf("%d\n", array[i]);
+		mid = (left + right) / 2;
+		if (array[mid] < value)
+			left = mid + 1;
+		else if (array[mid] > value)
+			right = mid - 1;
 		else
-			left = i + 1;
+			return (mid);
 	}
+
 	return (-1);
 }
